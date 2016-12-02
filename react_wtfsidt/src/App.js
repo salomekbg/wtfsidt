@@ -7,6 +7,7 @@ export default class App extends Component {
     return(
       <div>
         <ul>
+          What Should I do tonight?
           <li><Link to={'/signin'}>Sign In</Link></li>
           <li><Link to={'/newuser'}>New User</Link></li>
         </ul>
