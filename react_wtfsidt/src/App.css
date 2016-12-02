@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Comfortaa');
+
 .App {
   text-align: center;
 }
@@ -5,6 +7,34 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+
+h1 {
+  color: white;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 2px 5px black;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+li {
+  padding-bottom: 30px;
+}
+
+a {
+  font-family: 'Comfortaa', cursive;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: red;
 }
 
 .App-header {
