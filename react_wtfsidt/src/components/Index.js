@@ -15,8 +15,29 @@ class Index extends Component {
 
   handleMovieButtonClick(event){
     event.preventDefault()
-    console.log('movie button clicked')
+    var locationPromise = this.getLocation();
+    locationPromise.then(function(loc) { getMovie(loc); }).catch(function(err) { console.log("No location"); });
+
   }
+
+  getLocation(callback) {
+    var promise = new Promise(function(resolve, reject) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function(position){
+                    resolve({lat:position.coords.latitude, long: position.coords.longitude})
+                }
+            );
+        } else {
+          reject("Unknown");
+        }
+    });
+
+    return promise;
+  }
+
+
+
 }
 
 function mapDispatchToProps(dispatch){
