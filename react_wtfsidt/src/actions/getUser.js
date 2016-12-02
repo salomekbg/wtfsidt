@@ -1,11 +1,14 @@
 import $ from 'jquery';
 
 export default function getUser(formData) {
+  debugger;
+  let request = $.ajax({url: "http://localhost:3000/users",
+                        type: "POST"
+                      })
+
   return function(dispatch){
-    $.ajax({url: "http://localhost:3000/user",
-    type: "POST",
-    headers: {authorization: localStorage.getItem("authorization")}}).done(function(data){
-      debugger
+    request.done(function (data){
+      debugger;
       dispatch({type: 'GET_USER', payload: data})
     })
   }
