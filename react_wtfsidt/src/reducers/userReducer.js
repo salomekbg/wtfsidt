@@ -4,8 +4,8 @@ function userReducer(state=[], action) {
   switch (action.type) {
     case 'GET_USER':
       return state.concat(action.payload)
-    case 'ADD_USER':
-      return state
+    case 'CREATE_USER':
+      return state.concat([action.payload])
     default:
       return state
   }

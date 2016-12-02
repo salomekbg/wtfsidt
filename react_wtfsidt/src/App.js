@@ -6,7 +6,10 @@ export default class App extends Component {
   render() {
     return(
       <div>
-        <Link to={'/signin'}>Sign In</Link>
+        <ul>
+          <li><Link to={'/signin'}>Sign In</Link></li>
+          <li><Link to={'/newuser'}>New User</Link></li>
+        </ul>
         {this.props.children}
       </div>
     )

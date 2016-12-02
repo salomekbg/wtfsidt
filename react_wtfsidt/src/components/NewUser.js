@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import getUser from '../actions/getUser'
+import createUser from '../actions/createUser'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
-class Signin extends Component {
+class NewUser extends Component {
   constructor(props) {
     super(props);
 
@@ -23,13 +23,13 @@ class Signin extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.getUser(this.state)
+    this.props.createUser(this.state)
   }
 
   render() {
     return (
       <div>
-        <h1>Sign In</h1>
+        <h1>Create New Account</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <p><label>Username:</label></p>
           <p><input type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
@@ -43,7 +43,7 @@ class Signin extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getUser }, dispatch)
+  return bindActionCreators({ createUser }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Signin);
+export default connect(null, mapDispatchToProps)(NewUser);
