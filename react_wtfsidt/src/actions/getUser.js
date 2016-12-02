@@ -12,7 +12,7 @@ export default function createUser(formValues){
     }).done(function(response){
       localStorage.setItem('jwt', response.jwt)
       dispatch({type: 'LOGIN_USER', current_user: response.current_user})
-      browserHistory.push('/movies')
+      browserHistory.push('/index')
     })
     // 1. make an ajax request to my rails
     // 2. rails will create the user, and in exchange give me back a

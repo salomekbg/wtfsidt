@@ -8,6 +8,10 @@ class Movies extends Component {
       </div>
     )
   }
+
+  componentWillMount(){
+
+  }
 }
 
 export default Movies
