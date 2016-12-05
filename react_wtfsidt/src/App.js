@@ -8,8 +8,8 @@ export default class App extends Component {
       <div>
         <h1>What Should I Do Tonight?</h1>
         <ul>
-          <li><Link to={'/signin'}>Sign In</Link></li>
-          <li><Link to={'/newuser'}>Sign Up</Link></li>
+          <li className="accounts"><Link to={'/signin'}>Sign In</Link></li>
+          <li className="accounts"><Link to={'/newuser'}>Sign Up</Link></li>
         </ul>
         {this.props.children}
       </div>

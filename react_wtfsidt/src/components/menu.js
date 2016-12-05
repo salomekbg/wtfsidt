@@ -30,7 +30,7 @@ class Index extends Component {
 
   handleRestaurantButtonClick(event){
     event.preventDefault()
-    this.props.getRestaurant(this.state)
+    this.props.getRestaurant(this.state, localStorage.getItem('jwt'))
     // var locationPromise = this.getLocation();
     // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
   }

@@ -11,6 +11,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   color: white;
+  text-shadow: 2px 1px black;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -28,7 +29,7 @@ ul {
   font-size: 1.5em;
 }
 
-li {
+.accounts {
   padding-bottom: 30px;
 }
 

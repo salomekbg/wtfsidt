@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import App from './App';
 import Signin from './components/Signin';
 import NewUser from './components/NewUser';
-import Movies from './components/Movies';
+import Restaurants from './components/Restaurants';
 import Menu from './components/Menu'
 
 export default (
@@ -11,6 +11,6 @@ export default (
     <Route path="signin" component={Signin} />
     <Route path="newuser" component={NewUser} />
     <Route path="menu" component={Menu} />
-    <Route path="movies" component={Movies} />
+    <Route path="restaurants" component={Restaurants} />
   </Route>
 )
