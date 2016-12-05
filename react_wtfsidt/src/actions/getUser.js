@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import { browserHistory } from 'react-router'
-export default function createUser(formValues){
+
+export default function getUser(formValues){
   return function (dispatch){
-    dispatch({type: 'AUTHENTICATE_USER'})
     $.ajax({
       url: 'http://localhost:3000/signin',
       type: 'POST',
@@ -12,7 +12,7 @@ export default function createUser(formValues){
     }).done(function(response){
       localStorage.setItem('jwt', response.jwt)
       dispatch({type: 'LOGIN_USER', current_user: response.current_user})
-      browserHistory.push('/index')
+      browserHistory.push('/menu')
     })
     // 1. make an ajax request to my rails
     // 2. rails will create the user, and in exchange give me back a
@@ -22,19 +22,3 @@ export default function createUser(formValues){
     // 5. redirect to my task resource
   }
 }
-
-
-
-
-// export default function getUser(formData) {
-//   let request = $.ajax({url: "http://localhost:3000/users",
-//                         type: "POST",
-//
-//                       })
-//
-//   return function(dispatch){
-//     request.done(function (data){
-//       dispatch({type: 'CREATE_USER', payload: data})
-//     })
-//   }
-// }
