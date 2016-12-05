@@ -9,7 +9,7 @@ export default class App extends Component {
         <h1>What Should I Do Tonight?</h1>
         <ul>
           <li><Link to={'/signin'}>Sign In</Link></li>
-          <li><Link to={'/newuser'}>New User</Link></li>
+          <li><Link to={'/newuser'}>Sign Up</Link></li>
         </ul>
         {this.props.children}
       </div>

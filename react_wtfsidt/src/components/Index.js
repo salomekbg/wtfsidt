@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import getMovie from '../actions/getMovie'
 
-
 class Index extends Component {
   render(){
     return(
       <div>
-        <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movie</button>
+        <button onClick={this.handleMovieButtonClick.bind(this)}>See Nearby Movies</button>
       </div>
     )
   }
@@ -32,12 +31,8 @@ class Index extends Component {
           reject("Unknown");
         }
     });
-
     return promise;
   }
-
-
-
 }
 
 function mapDispatchToProps(dispatch){

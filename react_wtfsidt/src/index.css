@@ -1,11 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Comfortaa');
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: #36A9BD;
-  background: url("./img/grand_central1.jpg") no-repeat center center fixed;
+  background: url("./img/grand_central_crop.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: white;
+  font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+  color: white;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 2px 5px black;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+li {
+  padding-bottom: 30px;
+}
+
+a {
+  font-family: 'Comfortaa', cursive;
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 1px black;
+
+}
+
+a:hover {
+  color: red;
+}
+
+.account {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  text-align: center;
+  background-color: rgba(0, 0 , 0, .5);
+  text-shadow: 2px 1px black;
+
+}
+
+.button {
+
 }
