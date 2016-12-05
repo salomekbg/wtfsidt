@@ -28,8 +28,8 @@ class Signin extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Sign In</h1>
+      <div className="account">
+      <h2>Check Your Account:</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <p><label>Username:</label></p>
           <p><input type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
