@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 export default class App extends Component {
   render() {
@@ -23,7 +23,6 @@ export default class App extends Component {
       <div>
         {signIn}
         <h1>What Should I Do Tonight?</h1>
-
         {this.props.children}
       </div>
     )
@@ -31,6 +30,5 @@ export default class App extends Component {
 
   handleLogOut(){
     localStorage.removeItem('jwt');
-    browserHistory.push('/')
   }
 }

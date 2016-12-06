@@ -12,10 +12,13 @@ class Restaurants extends Component {
             <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>
             <li>Phone: {restaurant.phone}</li>
             <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
+            <label for="fav_restaurant">Mark as Favorite</label>
+            <input type="checkbox" name="fav_restaurant" id="fav_restaurant" />
             <br />
           </ul>
       )
     })
+
     return(
       <div className="main">
         <ul>
