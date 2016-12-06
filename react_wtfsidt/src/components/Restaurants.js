@@ -3,21 +3,20 @@ import { connect } from 'react-redux';
 
 class Restaurants extends Component {
   render(){
-    var filteredRestaurants = this.props.restaurants.filter((restaurant) => {
-      return restaurant.user_id === this.props.user_id
-    })
-    var restaurants = filteredRestaurants.map((restaurant) => {
+    var restaurants = this.props.restaurants.map((restaurant) => {
       return (
         <ul>
-          <li><h2> {restaurant.name} </h2></li>
+          <li><h2>{restaurant.name}</h2></li>
           <li>Rating: {restaurant.rating}</li>
           <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>
-          <li><a href={restaurant.url} target="_blank">URL: {restaurant.url}</a></li>
+          <li>Phone: {restaurant.phone}</li>
+          <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
+          <br />
         </ul>
       )
     })
     return(
-      <div>
+      <div className="main">
         {restaurants}
       </div>
     )
@@ -27,6 +26,5 @@ class Restaurants extends Component {
 function mapStateToProps(state){
   return {restaurants: state.restaurantsReducer.restaurants, user_id: state.restaurantsReducer.user_id}
 }
-
 
 export default connect(mapStateToProps)(Restaurants);

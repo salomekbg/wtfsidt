@@ -23,14 +23,20 @@ h1 {
   font-family: 'Cherry Cream Soda', cursive;
 }
 
+h2 {
+  color: white;
+  font-family: 'Cherry Cream Soda', cursive;
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
-  text-align: center;
   font-size: 1.5em;
 }
 
-.accounts {
+.main_links {
   padding-bottom: 30px;
+  text-align: center;
 }
 
 a {
@@ -38,23 +44,32 @@ a {
   text-decoration: none;
   color: white;
   text-shadow: 2px 1px black;
-
 }
 
 a:hover {
   color: red;
 }
 
-.account {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 50px;
+.account_info {
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 50px;
   background-color: rgba(0, 0 , 0, .5);
   text-shadow: 2px 1px black;
-
 }
 
-.button {
+div .main {
+  text-align: left;
+  font-size: .6em;
+  color: yellow;
+  background-color: rgba(0, 0 , 0, .5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
 
 }

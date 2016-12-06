@@ -13,13 +13,20 @@ class Index extends Component {
       zipcode: ''
     }
   }
+
   render(){
     return(
-      <div>
-        <label>Zip Code</label>
+      <div className="account_info">
+        <label> Enter Zip Code: </label>
         <input type='number' onChange={this.handleOnZipCodeChange.bind(this)} />
-        <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movie</button>
-        <button onClick={this.handleRestaurantButtonClick.bind(this)}>Get Restaurant</button>
+        <br/><br/>
+        <button onClick={this.handleRestaurantButtonClick.bind(this)}>Get Restaurants</button>
+        <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
+        <button>Get Bars</button>
+        <button>Get Live Shows</button>
+        <button>Get Concerts</button>
+        <button>What's on TV</button>
+        <button>Choose For Me!</button>
       </div>
     )
   }

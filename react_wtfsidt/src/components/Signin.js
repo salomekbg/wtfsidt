@@ -28,7 +28,7 @@ class Signin extends Component {
 
   render() {
     return (
-      <div className="account">
+      <div className="account_info">
       <h2>Check Your Account:</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <p><label>Username:</label></p>

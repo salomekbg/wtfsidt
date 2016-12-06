@@ -28,7 +28,7 @@ class NewUser extends Component {
 
   render() {
     return (
-      <div className="account">
+      <div className="account_info">
         <h2>Create New Account</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <p><label>Username:</label></p>

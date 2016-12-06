@@ -10,7 +10,7 @@ export default function getRestaurant(formValues, jwt){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      dispatch({type: 'SHOW_RESTAURANTS', restaurant_info: response.restaurants, user_id: response.user_id})
+      dispatch({type: 'SHOW_RESTAURANTS', restaurant_info: response.restaurants})
       browserHistory.push('/restaurants')
     })
   }
