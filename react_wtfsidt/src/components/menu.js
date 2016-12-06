@@ -25,7 +25,7 @@ class Index extends Component {
         <button>Get Bars</button>
         <button>Get Live Shows</button>
         <button>Get Concerts</button>
-        <button>What's on TV</button>
+        <button>What is on TV</button>
         <button>Choose For Me!</button>
       </div>
     )

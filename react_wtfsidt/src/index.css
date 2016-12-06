@@ -37,6 +37,8 @@ ul {
 .main_links {
   padding-bottom: 30px;
   text-align: center;
+  display: inline;
+  padding: 0 30px;
 }
 
 a {
