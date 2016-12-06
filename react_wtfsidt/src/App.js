@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 export default class App extends Component {
   render() {
@@ -11,7 +11,14 @@ export default class App extends Component {
           <li className="main_links"><Link to={'/newuser'}>Sign Up</Link></li>
         </ul>
       )
+    } else {
+      signIn = (
+        <ul>
+          <li className="main_links" onClick={this.handleLogOut}><Link to={'/'}>Sign Out</Link></li>
+        </ul>
+      )
     }
+
     return(
       <div>
         {signIn}
@@ -20,5 +27,10 @@ export default class App extends Component {
         {this.props.children}
       </div>
     )
+  }
+
+  handleLogOut(){
+    localStorage.removeItem('jwt');
+    browserHistory.push('/')
   }
 }

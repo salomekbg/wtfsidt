@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { browserHistory } from 'react-router'
+
 export default function createUser(formValues){
   return function (dispatch){
     dispatch({type: 'CREATING_USER'})
