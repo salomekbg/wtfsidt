@@ -8,10 +8,6 @@ class Favorites extends Component {
       </div>
     )
   }
-
-  function mapStateToProps(state){
-    return {restaurants: state.restaurantsReducer.restaurants, user_id: state.restaurantsReducer.user_id}
-  }
 }
 
 export default Favorites
