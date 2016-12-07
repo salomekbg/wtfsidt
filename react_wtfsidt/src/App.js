@@ -15,6 +15,8 @@ export default class App extends Component {
       signIn = (
         <ul>
           <li className="main_links" onClick={this.handleLogOut}><Link to={'/'}>Sign Out</Link></li>
+          <li className="main_links" ><Link to={'/favorites'}>Favorites</Link></li>
+
         </ul>
       )
     }

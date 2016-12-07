@@ -15,6 +15,7 @@ export default function setFavorite(restaurant_id, checked){
     $.ajax({
       url: url,
       type: type,
+      headers: {authorization: localStorage.getItem('jwt')},
       data: JSON.stringify({restaurant: {id: restaurant_id}, user: {jwt: localStorage.getItem('jwt')}}),
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'

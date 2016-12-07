@@ -6,6 +6,7 @@ export default function getRestaurant(formValues, jwt){
     $.ajax({
       url: 'http://localhost:3000/restaurants',
       type: 'POST',
+      headers: {authorization: localStorage.getItem('jwt')},
       data: JSON.stringify({data: {zipcode: formValues.zipcode, jwt: jwt}}),
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
