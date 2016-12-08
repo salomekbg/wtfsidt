@@ -13,20 +13,21 @@ class Favorites extends Component {
       id: ''
     }
   }
+
   render(){
     var favorites = this.props.favorites.map((favorite, index) => {
       return (
           <ul key={index}>
-            <li><h2>{favorite.name}</h2></li>
-            <li>Address: {favorite.address}, {favorite.city} {favorite.zipcode}</li>
-            <li>Phone: {favorite.phone}</li>
-            <li><a href={favorite.url} target="_blank">URL: Find on Yelp</a></li>
-            {!favorite.rating ? <li>Your Rating: No Rating Yet</li> : <li>Your Rating: {favorite.rating}</li>}
-            {!favorite.note ? <li>Your Notes: No Notes Yet</li> : <li>Your Notes: {favorite.note}</li>}
-            <li className="last">Notes: {favorite.note}</li>
+            <li><h2>{favorite[1].name}</h2></li>
+            <li>Address: {favorite[1].address}, {favorite[1].city} {favorite[1].zipcode}</li>
+            <li>Phone: {favorite[1].phone}</li>
+            <li><a href={favorite[1].url} target="_blank">URL: Find on Yelp</a></li>
+            {!favorite[0].rating ? <li>Your Rating: No Rating Yet</li> : <li>Your Rating: {favorite[0].rating}</li>}
+            {!favorite[0].note ? <li>Your Notes: No Notes Yet</li> : <li>Your Notes: {favorite[0].note}</li>}
+            <li className="last">Notes: {favorite[0].note}</li>
             <form onSubmit={this.onFormSubmit.bind(this)} >
-              <input type='number' id={favorite.id} onChange={this.handleRatingChange.bind(this)} placeholder='add rating' /><br />
-              <input type='text' id={favorite.id} onChange={this.handleNotesChange.bind(this)} placeholder='add notes' /><br />
+              <input type='number' id={favorite[0].id} onChange={this.handleRatingChange.bind(this)} placeholder='add rating' /><br />
+              <input type='text' id={favorite[0].id} onChange={this.handleNotesChange.bind(this)} placeholder='add notes' /><br />
               <input type='submit' />
             </form>
           </ul>
