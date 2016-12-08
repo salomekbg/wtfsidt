@@ -5,7 +5,7 @@ import Signin from './components/Signin';
 import NewUser from './components/NewUser';
 import Restaurants from './components/Restaurants';
 import Menu from './components/menu'
-import Favorites from './components/favorites';
+import Favorites from './components/Favorites';
 
 export default (
   <Route path="/" component={App} >

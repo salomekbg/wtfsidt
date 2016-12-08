@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Link } from 'react-router';
+import getFavorite from './actions/getFavorite'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
-export default class App extends Component {
+class App extends Component {
   render() {
     if(!localStorage.getItem('jwt')){
       var signIn = (
@@ -15,8 +18,7 @@ export default class App extends Component {
       signIn = (
         <ul>
           <li className="main_links" onClick={this.handleLogOut}><Link to={'/'}>Sign Out</Link></li>
-          <li className="main_links" ><Link to={'/favorites'}>Favorites</Link></li>
-
+          <li className="main_links" onClick={this.handleFavoritesClick.bind(this)}><Link to={'/favorites'}>Favorites</Link></li>
         </ul>
       )
     }
@@ -30,7 +32,17 @@ export default class App extends Component {
     )
   }
 
+  handleFavoritesClick(){
+    this.props.getFavorite()
+  }
+
   handleLogOut(){
     localStorage.removeItem('jwt');
   }
 }
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({ getFavorite }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(App);
