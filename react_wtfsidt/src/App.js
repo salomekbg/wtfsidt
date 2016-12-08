@@ -19,6 +19,7 @@ class App extends Component {
         <ul>
           <li className="main_links" onClick={this.handleLogOut}><Link to={'/'}>Sign Out</Link></li>
           <li className="main_links" onClick={this.handleFavoritesClick.bind(this)}><Link to={'/favorites'}>Favorites</Link></li>
+          <li className="main_links"><Link to={'/menu'}>Menu</Link></li>
         </ul>
       )
     }
