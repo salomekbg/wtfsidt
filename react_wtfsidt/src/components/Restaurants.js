@@ -30,9 +30,6 @@ class Restaurants extends Component {
 
     return(
       <div className="main">
-        <ul>
-        <li><Link to={'/menu'}>Back to Menu</Link></li>
-        </ul>
         {restaurants}
       </div>
     )
