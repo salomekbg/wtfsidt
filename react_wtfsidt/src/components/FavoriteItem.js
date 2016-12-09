@@ -15,25 +15,15 @@ class FavoriteItem extends Component {
   }
 
   render(){
-    var favorites = this.props.favorites.map((favorite, index) => {
-      return (
-          <ul key={index}>
-            <li><h2>{favorite[1].name}</h2></li>
-            <li>Address: {favorite[1].address}, {favorite[1].city} {favorite[1].zipcode}</li>
-            <li>Phone: {favorite[1].phone}</li>
-            <li><a href={favorite[1].url} target="_blank">URL: Find on Yelp</a></li>
-            <form onSubmit={this.onFormSubmit.bind(this)} >
-              Rating: <input type='number' id={favorite[0].id} onChange={this.handleRatingChange.bind(this)} placeholder='add rating' defaultValue={favorite[0].rating} /><br />
-              Notes: <input type='text' id={favorite[0].id} onChange={this.handleNotesChange.bind(this)} placeholder='add notes' defaultValue={favorite[0].note} /><br />
-              <input type='submit' />
-            </form>
-          </ul>
-      )
-    })
     return(
-      <div>
-        {favorites}
-      </div>
+      <li>
+        <h2>{this.props.fav[1].name}</h2>
+        {this.props.fav[1].address}<br />
+        {this.props.fav[1].city}, {this.props.fav[1].zipcode}<br />
+        {this.props.fav[1].phone}<br />
+        Rating: {this.props.fav[0].rating}<br />
+        Notes: {this.props.fav[0].note}
+      </li>
     )
   }
 
@@ -52,7 +42,6 @@ class FavoriteItem extends Component {
     } else {
       console.log("I hate you")
     }
-
   }
 }
 
