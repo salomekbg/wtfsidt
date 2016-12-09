@@ -23,10 +23,11 @@ class FavoriteItem extends Component {
         {this.props.fav[1].city}, {this.props.fav[1].zipcode}<br />
         {this.props.fav[1].phone}<br />
         <form onSubmit={this.onFormSubmit.bind(this)}>
-          Rating: <input type='text' id={this.props.fav[0].id} onChange={this.handleRatingChange.bind(this)} defaultValue={this.props.fav[0].rating}/><br />
-          Notes: <input type='text' id={this.props.fav[0].id} onChange={this.handleNotesChange.bind(this)} defaultValue={this.props.fav[0].note}/><br />
-          <button type='submit'>Submit</button>
+          Rating: <input type='number' id={this.props.fav[0].id} onChange={this.handleRatingChange.bind(this)} defaultValue={this.props.fav[0].rating}/><br />
+          Notes: <textarea type='text' id={this.props.fav[0].id} onChange={this.handleNotesChange.bind(this)} defaultValue={this.props.fav[0].note}/><br />
+          <button type='submit'>Update Rating & Notes</button>
         </form>
+        <button id={this.props.fav[0].id} onClick={this.handleDeleteClick.bind(this)}>Delete</button>
       </li>
     )
   }
@@ -37,6 +38,10 @@ class FavoriteItem extends Component {
 
   handleNotesChange(event){
     this.setState({notes: event.target.value, id: event.target.id})
+  }
+
+  handleDeleteClick(event){
+    this.props.deleteFavorite(event.target.id);
   }
 
   componentWillMount(){
