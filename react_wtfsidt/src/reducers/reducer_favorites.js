@@ -3,7 +3,9 @@ export default function(state={favorites: []}, action){
     case 'SHOW_FAVORITES':
       return {...state, favorites: action.favorite_info}
     case 'UPDATE_FAVORITES':
-      return {...state, favorite: action.favorite_info}
+      return {...state, favorites: action.favorite_info}
+    case 'DELETE_FAVORITE':
+      return {...state, favorites: action.favorite_info}
     default:
       return state
   }
