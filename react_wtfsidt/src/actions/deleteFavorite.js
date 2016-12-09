@@ -13,6 +13,8 @@ export default function deleteFavorite(favorite_id){
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
       debugger
+//       The way you are using the delete favorites action, you may not need a separate action for this.  It is simply updating the favorites with the 
+//       New list.  So you can just call it the same old update favorites action, or whatever its called.
       dispatch({type: 'DELETE_FAVORITE', favorite_info: response.favorites})
       browserHistory.push('/favorites')
     })
