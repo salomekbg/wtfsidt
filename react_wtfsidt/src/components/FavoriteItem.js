@@ -39,6 +39,13 @@ class FavoriteItem extends Component {
     this.setState({notes: event.target.value, id: event.target.id})
   }
 
+  componentWillMount(){
+    this.setState({
+      rating: this.props.fav[0].rating,
+      notes: this.props.fav[0].note
+    })
+  }
+
   onFormSubmit(event){
     console.log(this.state)
     event.preventDefault();
@@ -51,9 +58,5 @@ class FavoriteItem extends Component {
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ updateFavorite, deleteFavorite }, dispatch)
 }
-
-// function mapStateToProps(state){
-//   return {favorites: state.favoritesReducer.favorites}
-// }
 
 export default connect(null, mapDispatchToProps)(FavoriteItem);

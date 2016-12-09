@@ -12,7 +12,6 @@ export default function deleteFavorite(favorite_id){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      debugger
       dispatch({type: 'DELETE_FAVORITE', favorite_info: response.favorites})
       browserHistory.push('/favorites')
     })

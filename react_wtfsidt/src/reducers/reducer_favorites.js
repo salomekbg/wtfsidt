@@ -6,6 +6,8 @@ export default function(state={favorites: []}, action){
       return {...state, favorites: action.favorite_info}
     case 'DELETE_FAVORITE':
       return {...state, favorites: action.favorite_info}
+    case 'LOG_OUT':
+      return {favorites: []}
     default:
       return state
   }
