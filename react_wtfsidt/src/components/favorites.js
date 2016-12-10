@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 
 class Favorites extends Component {
   render(){
-    var favorites = this.props.favorites.map((favorite, index) => {
+    var favoriteList = this.props.favorites.map((favorite, index) => {
       return (
           <FavoriteItem fav={favorite} key={index}/>
       )
     })
     return(
       <ul className='favorite'>
-        {favorites}
+        {favoriteList}
       </ul>
     )
   }

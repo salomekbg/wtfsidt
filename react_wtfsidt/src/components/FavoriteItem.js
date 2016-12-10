@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import updateFavorite from '../actions/updateFavorite'
+import deleteFavorite from '../actions/deleteFavorite'
 
 class FavoriteItem extends Component {
-  constructor(){
-    super()
-
+  constructor(props){
+    super(props)
     this.state = {
-      rating: 0,
-      notes: 'I do not know',
-      id: ''
+      rating: props.fav[0].rating,
+      notes: props.fav[0].note,
+      id: '',
+      test: ''
     }
   }
 
@@ -21,8 +22,12 @@ class FavoriteItem extends Component {
         {this.props.fav[1].address}<br />
         {this.props.fav[1].city}, {this.props.fav[1].zipcode}<br />
         {this.props.fav[1].phone}<br />
-        Rating: {this.props.fav[0].rating}<br />
-        Notes: {this.props.fav[0].note}
+        <form onSubmit={this.onFormSubmit.bind(this)}>
+          Rating: <input type='number' id={this.props.fav[0].id} onChange={this.handleRatingChange.bind(this)} defaultValue={this.props.fav[0].rating}/><br />
+          Notes: <textarea type='text' id={this.props.fav[0].id} onChange={this.handleNotesChange.bind(this)} defaultValue={this.props.fav[0].note}/><br />
+          <button type='submit'>Update Rating & Notes</button>
+        </form>
+        <button id={this.props.fav[0].id} onClick={this.handleDeleteClick.bind(this)}>Delete</button>
       </li>
     )
   }
@@ -35,22 +40,28 @@ class FavoriteItem extends Component {
     this.setState({notes: event.target.value, id: event.target.id})
   }
 
+  handleDeleteClick(event){
+    this.props.deleteFavorite(event.target.id);
+  }
+
+  componentWillMount(){
+    this.setState({
+      rating: this.props.fav[0].rating,
+      notes: this.props.fav[0].note
+    })
+  }
+
   onFormSubmit(event){
+    console.log(this.state)
     event.preventDefault();
     if (this.state.id) {
       this.props.updateFavorite(this.state);
-    } else {
-      console.log("I hate you")
     }
   }
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ updateFavorite }, dispatch)
+  return bindActionCreators({ updateFavorite, deleteFavorite }, dispatch)
 }
 
-function mapStateToProps(state){
-  return {favorites: state.favoritesReducer.favorites}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FavoriteItem);
+export default connect(null, mapDispatchToProps)(FavoriteItem);

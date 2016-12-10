@@ -10,7 +10,7 @@ export default function updateFavorite(formValues){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      dispatch({type: 'UPDATE_FAVORITES', favorite_info: response.favorite})
+      dispatch({type: 'UPDATE_FAVORITES', favorite_info: response.favorites})
     })
   }
 }
