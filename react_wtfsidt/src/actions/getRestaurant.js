@@ -11,7 +11,7 @@ export default function getRestaurant(formValues){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      dispatch({type: 'SHOW_RESTAURANTS', restaurant_info: response.restaurants})
+      dispatch({type: 'SHOW_RESTAURANTS', restaurant_info: response})
       browserHistory.push('/restaurants')
     })
   }

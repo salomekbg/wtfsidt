@@ -11,8 +11,12 @@ class Restaurants extends Component {
       favorites: []
     }
   }
+
   render(){
-    var restaurants = this.props.restaurants.map((restaurant, index) => {
+    debugger;
+    var combo = [];
+    for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
+    var restaurants = combo[0].map((restaurant, index) => {
       return (
           <ul key={index}>
             <li><h2>{restaurant.name}</h2></li>
@@ -21,7 +25,7 @@ class Restaurants extends Component {
             <li>Phone: {restaurant.phone}</li>
             <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
             <label htmlFor="fav_restaurant">Mark as Favorite</label>
-            <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />
+            {combo[1].includes(restaurant.id) ? <input type="checkbox" checked='true' onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" checked='false' onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
             <br />
           </ul>
       )
@@ -34,13 +38,20 @@ class Restaurants extends Component {
     )
   }
 
+  componentWillMount(){
+
+  }
+
   handleFavoriteCheckBox(event){
     this.props.setFavorite(event.target.id, event.target.checked)
   }
 }
 
 function mapStateToProps(state){
-  return {restaurants: state.restaurantsReducer.restaurants}
+  return {
+    restaurants: state.restaurantsReducer.restaurants,
+    favorites: state.favoritesReducer.favorites
+  }
 }
 
 function mapDispatchToProps(dispatch){
