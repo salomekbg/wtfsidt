@@ -11,8 +11,7 @@ export default function getMovie(formValues){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      debugger
-      dispatch({type: 'SHOW_MOVIE', movie_info: response.movie_info})
+      dispatch({type: 'SHOW_MOVIES', movie_info: response.movie_info})
       browserHistory.push('/movies')
     })
   }

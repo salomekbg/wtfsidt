@@ -6,6 +6,7 @@ import NewUser from './components/NewUser';
 import Restaurants from './components/Restaurants';
 import Menu from './components/menu'
 import Favorites from './components/Favorites';
+import Movies from './components/Movies';
 
 export default (
   <Route path="/" component={App} >
@@ -14,5 +15,6 @@ export default (
     <Route path="menu" component={Menu} />
     <Route path="restaurants" component={Restaurants} />
     <Route path="favorites" component={Favorites} />
+    <Route path="movies" component={Movies} />
   </Route>
 )

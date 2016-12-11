@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Movies extends Component {
   render(){
@@ -8,10 +9,12 @@ class Movies extends Component {
       </div>
     )
   }
+}
 
-  componentWillMount(){
-
+function mapStateToProps(state){
+  return {
+    movies: state.moviesReducer.movies
   }
 }
 
-export default Movies
+export default connect(mapStateToProps)(Movies);

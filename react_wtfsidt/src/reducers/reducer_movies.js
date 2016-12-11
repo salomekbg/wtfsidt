@@ -1,9 +1,7 @@
-export default function(state={}, action){
+export default function(state={movies: []}, action){
   switch(action.type){
-    case 'GET_MOVIE':
-      return (console.log('get movie reducer'))
-    case 'SHOW_MOVIE':
-      return state
+    case 'SHOW_MOVIES':
+      return {...state, movies: action.movie_info}
     default:
       return state
   }
