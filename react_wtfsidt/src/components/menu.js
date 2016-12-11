@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import getMovie from '../actions/getMovie';
 import getRestaurant from '../actions/getRestaurant'
-
+import getLiveEvent from '../actions/getLiveEvent'
 
 class Index extends Component {
   constructor(props){
@@ -22,8 +22,7 @@ class Index extends Component {
         <br/><br/>
         <button onClick={this.handleRestaurantButtonClick.bind(this)}>Get Restaurants</button>
         <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
-        <button>Get Bars</button>
-        <button>Get Live Shows</button>
+        <button onClick={this.handleLiveEventsButtonClick.bind(this)}>Get Live Events</button>
         <button>Get Concerts</button>
         <button>What is on TV</button>
         <button>Choose For Me!</button>
@@ -33,6 +32,11 @@ class Index extends Component {
 
   handleOnZipCodeChange(event){
     this.setState({zipcode: event.target.value})
+  }
+
+  handleLiveEventsButtonClick(event){
+    event.preventDefault()
+    this.props.getLiveEvent(this.state)
   }
 
   handleRestaurantButtonClick(event){
@@ -68,7 +72,7 @@ class Index extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getMovie, getRestaurant }, dispatch)
+  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(Index);

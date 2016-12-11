@@ -7,6 +7,7 @@ import Restaurants from './components/Restaurants';
 import Menu from './components/menu'
 import Favorites from './components/Favorites';
 import Movies from './components/Movies';
+import Events from './components/Events';
 
 export default (
   <Route path="/" component={App} >
@@ -16,5 +17,6 @@ export default (
     <Route path="restaurants" component={Restaurants} />
     <Route path="favorites" component={Favorites} />
     <Route path="movies" component={Movies} />
+    <Route path="events" component={Events} />
   </Route>
 )
