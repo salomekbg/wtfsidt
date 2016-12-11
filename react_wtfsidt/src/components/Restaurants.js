@@ -13,7 +13,6 @@ class Restaurants extends Component {
   }
 
   render(){
-    debugger;
     var combo = [];
     for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
     var restaurants = combo[0].map((restaurant, index) => {
@@ -25,7 +24,7 @@ class Restaurants extends Component {
             <li>Phone: {restaurant.phone}</li>
             <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
             <label htmlFor="fav_restaurant">Mark as Favorite</label>
-            {combo[1].includes(restaurant.id) ? <input type="checkbox" checked='true' onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" checked='false' onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
+            {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
             <br />
           </ul>
       )
