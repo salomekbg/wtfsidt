@@ -11,7 +11,7 @@ class Index extends Component {
     return(
       <div className="account_info">
         <label> Enter Zip Code: </label>
-        <input type='number' onChange={this.handleOnZipCodeChange.bind(this)} />
+        <input type='number' onChange={this.handleOnZipCodeChange.bind(this)} value={this.props.zipcode} />
         <br/><br/>
         <button onClick={this.handleRestaurantButtonClick.bind(this)}>Get Restaurants</button>
         <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
@@ -34,7 +34,7 @@ class Index extends Component {
 
   handleRestaurantButtonClick(event){
     event.preventDefault()
-    this.props.getRestaurant(this.state)
+    this.props.getRestaurant(this.props.zipcode)
     // var locationPromise = this.getLocation();
     // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
   }
@@ -64,8 +64,13 @@ class Index extends Component {
 
 }
 
+function mapStateToProps(state){
+  return {zipcode: state.usersReducer.zip_code}
+
+}
+
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
