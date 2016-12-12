@@ -3,7 +3,17 @@ import { connect } from 'react-redux';
 
 class Events extends Component {
   render(){
-      var liveEvents = this.props.liveEvents.event_info.map((liveEvent, index) => {
+    debugger
+      if(this.props.liveEvents.length === 0){
+        var liveEvents = function(){
+          return(
+            <ul>
+              <li>No events in your area today!  Check back later.</li>
+            </ul>
+          )
+        }
+      } else {
+      liveEvents = this.props.liveEvents.map((liveEvent, index) => {
         return(
           <ul key={index}>
             <li><h2><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h2></li>
@@ -11,7 +21,8 @@ class Events extends Component {
             <li>Start Time: {liveEvent.start_time}</li>
           </ul>
         )
-      })
+      })}
+
     return(
       <div className="main">
         {liveEvents}

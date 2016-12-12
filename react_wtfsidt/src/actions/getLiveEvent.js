@@ -11,7 +11,10 @@ export default function getEvent(zipcode){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      dispatch({type: 'SHOW_EVENTS', event_info: response})
+      var legit_events = response.event_info.filter((event) => {
+        return event != null
+      })
+      dispatch({type: 'SHOW_EVENTS', event_info: legit_events})
       browserHistory.push('/events')
     })
   }

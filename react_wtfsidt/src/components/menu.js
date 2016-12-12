@@ -29,7 +29,7 @@ class Index extends Component {
 
   handleLiveEventsButtonClick(event){
     event.preventDefault()
-    this.props.getLiveEvent(this.state)
+    this.props.getLiveEvent(this.props.zipcode)
   }
 
   handleRestaurantButtonClick(event){
