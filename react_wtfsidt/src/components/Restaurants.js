@@ -24,6 +24,7 @@ class Restaurants extends Component {
             <li>Phone: {restaurant.phone}</li>
             <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
             <label htmlFor="fav_restaurant">Mark as Favorite</label>
+//         this line below is really long - its fine to move it into an if else statement.
             {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
             <br />
           </ul>
