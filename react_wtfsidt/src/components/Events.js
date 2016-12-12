@@ -13,7 +13,7 @@ class Events extends Component {
           )
         }
       } else {
-      liveEvents = this.props.liveEvents.map((liveEvent, index) => {
+      liveEvents = this.props.liveEvents.event_info.map((liveEvent, index) => {
         return(
           <ul key={index}>
             <li><h2><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h2></li>

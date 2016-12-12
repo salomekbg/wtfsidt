@@ -5,6 +5,7 @@ import getMovie from '../actions/getMovie';
 import getRestaurant from '../actions/getRestaurant'
 import getLiveEvent from '../actions/getLiveEvent'
 import setZipCode from '../actions/setZipCode'
+import getConcert from '../actions/getConcert'
 
 class Index extends Component {
   render(){
@@ -16,7 +17,7 @@ class Index extends Component {
         <button onClick={this.handleRestaurantButtonClick.bind(this)}>Get Restaurants</button>
         <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
         <button onClick={this.handleLiveEventsButtonClick.bind(this)}>Get Live Events</button>
-        <button>Get Concerts</button>
+        <button onClick={this.handleConcertButtonClick.bind(this)}>Get Concerts</button>
         <button>What is on TV</button>
         <button>Choose For Me!</button>
       </div>
@@ -25,6 +26,11 @@ class Index extends Component {
 
   handleOnZipCodeChange(event){
     this.props.setZipCode(event.target.value)
+  }
+
+  handleConcertButtonClick(event){
+    event.preventDefault()
+    this.props.getConcert(this.state)
   }
 
   handleLiveEventsButtonClick(event){
@@ -41,7 +47,7 @@ class Index extends Component {
 
   handleMovieButtonClick(event){
     event.preventDefault()
-    this.props.getMovie(this.state)
+    this.props.getMovie(this.props.zipcode)
     // var locationPromise = this.getLocation();
     // locationPromise.then(function(loc) { this.props.getMovie(loc); }).catch(function(err) { console.log("No location"); });
   }
@@ -70,7 +76,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode }, dispatch)
+  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode, getConcert }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

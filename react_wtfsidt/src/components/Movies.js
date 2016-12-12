@@ -3,9 +3,24 @@ import { connect } from 'react-redux';
 
 class Movies extends Component {
   render(){
+    var movies = this.props.movies.map((movie, index) => {
+      var re = /http:\D*\d*[^&d]/
+      var url = movie.showtimes[0].match(re)[0] + '&location=' + this.props.zipcode
+      return(
+        <ul key={index}>
+          <li><h2><a href={url} target="_blank">{movie.title}</a></h2></li>
+          <li>{movie.description}</li>
+          <li>Genres: {movie.genres.map((genre, index) => {
+            return(<span key={index}>{genre} </span>)
+          })}</li>
+          <li><img src={movie.image_url} alt='movie pic'/></li>
+        </ul>
+      )
+    }, this)
+
     return(
       <div>
-        Movies go here!
+        {movies}
       </div>
     )
   }
@@ -13,7 +28,8 @@ class Movies extends Component {
 
 function mapStateToProps(state){
   return {
-    movies: state.moviesReducer.movies
+    movies: state.moviesReducer.movies,
+    zipcode: state.usersReducer.zip_code
   }
 }
 
