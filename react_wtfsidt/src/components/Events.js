@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class Events extends Component {
   render(){
-    debugger
       var liveEvents = this.props.liveEvents.event_info.map((liveEvent, index) => {
         return(
           <ul key={index}>
