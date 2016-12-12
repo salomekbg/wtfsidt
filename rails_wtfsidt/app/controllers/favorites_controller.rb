@@ -27,6 +27,7 @@ class FavoritesController < ApplicationController
     favObject = all_user_favorites.map do |favorite|
       [favorite, favorite.favoritable]
     end.sort!
+    # JK:    if its a list, just call it favorites.
     render json: {favorites: favObject}
   end
 
