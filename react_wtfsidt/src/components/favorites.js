@@ -18,6 +18,7 @@ class Favorites extends Component {
 }
 
 function mapStateToProps(state){
+//     here, can just have favorites return the array of favorites, so that you can call state.favorites.
   return {favorites: state.favoritesReducer.favorites}
 }
 
