@@ -21,13 +21,13 @@ class FavoriteItem extends Component {
         <h2>{this.props.fav[1].name}</h2>
         {this.props.fav[1].address}<br />
         {this.props.fav[1].city}, {this.props.fav[1].zipcode}<br />
-        {this.props.fav[1].phone}<br />
+        {this.props.fav[1].phone}<br /><br />
         <form onSubmit={this.onFormSubmit.bind(this)}>
-          Rating: <input type='number' id={this.props.fav[0].id} onChange={this.handleRatingChange.bind(this)} defaultValue={this.props.fav[0].rating}/><br />
+          Rating: <input type='number' id={this.props.fav[0].id} onChange={this.handleRatingChange.bind(this)} defaultValue={this.props.fav[0].rating}/><br /><br />
           Notes: <textarea type='text' id={this.props.fav[0].id} onChange={this.handleNotesChange.bind(this)} defaultValue={this.props.fav[0].note}/><br />
           <button type='submit'>Update Rating & Notes</button>
-        </form>
-        <button id={this.props.fav[0].id} onClick={this.handleDeleteClick.bind(this)}>Delete</button>
+        </form><br />
+        <button id= {this.props.fav[0].id} onClick={this.handleDeleteClick.bind(this)}>Delete Favorite</button><br /><br />
       </li>
     )
   }

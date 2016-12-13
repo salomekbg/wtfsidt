@@ -70,6 +70,15 @@ div .main {
   padding-bottom: 10px;
 }
 
+div .favorite {
+  font-size: .9em;
+  background-color: rgba(0, 0 , 0, .5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  color: yellow;
+}
+
 button {
   margin-left: 10px;
   margin-right: 10px;
