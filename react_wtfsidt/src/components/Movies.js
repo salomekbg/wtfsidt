@@ -10,16 +10,14 @@ class Movies extends Component {
         <ul key={index}>
           <li><h2><a href={url} target="_blank">{movie.title}</a></h2></li>
           <li>{movie.description}</li>
-          <li>Genres: {movie.genres.map((genre, index) => {
-            return(<span key={index}>{genre} </span>)
-          })}</li>
+          <li>Genres: {movie.genres.join(', ')}</li>
           <li><img src={movie.image_url} alt='movie pic'/></li>
         </ul>
       )
     }, this)
 
     return(
-      <div>
+      <div className='main'>
         {movies}
       </div>
     )
