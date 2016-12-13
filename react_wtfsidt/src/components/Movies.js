@@ -7,11 +7,11 @@ class Movies extends Component {
       var re = /http:\D*\d*[^&d]/
       var url = movie.showtimes[0].match(re)[0] + '&location=' + this.props.zipcode
       return(
-        <ul key={index}>
+        <ul key={index} className="movie">
+          {movie.image_url == "NO IMAGE" ? null : <li><img src={movie.image_url} alt='movie pic'/></li>}
           <li><h2><a href={url} target="_blank">{movie.title}</a></h2></li>
-          <li>{movie.description}</li>
-          <li>Genres: {movie.genres.join(', ')}</li>
-          <li><img src={movie.image_url} alt='movie pic'/></li>
+          <li>{movie.description}</li><br />
+          <li><u>Genres:</u> {movie.genres.join(', ')}</li>
         </ul>
       )
     }, this)
