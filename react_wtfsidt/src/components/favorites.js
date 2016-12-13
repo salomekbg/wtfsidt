@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 
 class Favorites extends Component {
   render(){
-    var favoriteList = this.props.favorites.map((favorite, index) => {
+    if(this.props.favorites.length === 0){
+      var favoriteList = <li>You have no favorites!</li>
+    } else {
+    favoriteList = this.props.favorites.map((favorite, index) => {
       return (
           <FavoriteItem fav={favorite} key={index}/>
       )
-    })
+    })}
     return(
       <ul className='favorite'>
         {favoriteList}

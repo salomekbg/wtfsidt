@@ -15,7 +15,10 @@ class Restaurants extends Component {
   render(){
     var combo = [];
     for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
-    var restaurants = combo[0].map((restaurant, index) => {
+    if(this.props.restaurants.length === 0){
+      var restaurants = <li>You have no restaurants</li>
+    } else {
+    restaurants = combo[0].map((restaurant, index) => {
       return (
           <ul key={index}>
             <li><h2>{restaurant.name}</h2></li>
@@ -28,7 +31,7 @@ class Restaurants extends Component {
             <br />
           </ul>
       )
-    })
+    })}
 
     return(
       <div className="main">
