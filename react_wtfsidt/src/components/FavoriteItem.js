@@ -27,7 +27,7 @@ class FavoriteItem extends Component {
           Notes: <textarea type='text' id={this.props.fav[0].id} onChange={this.handleNotesChange.bind(this)} defaultValue={this.props.fav[0].note}/><br />
           <button type='submit'>Update Rating & Notes</button>
         </form><br />
-        <button id= {this.props.fav[0].id} onClick={this.handleDeleteClick.bind(this)}>Delete Favorite</button><br /><br />
+        <button id={this.props.fav[0].id} onClick={this.handleDeleteClick.bind(this)}>Delete Favorite</button><br /><br />
       </li>
     )
   }
