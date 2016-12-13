@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class Events extends Component {
   render(){
-    debugger
       if(this.props.liveEvents.length === 0){
         var liveEvents = function(){
           return(
@@ -13,7 +12,7 @@ class Events extends Component {
           )
         }
       } else {
-      liveEvents = this.props.liveEvents.event_info.map((liveEvent, index) => {
+      liveEvents = this.props.liveEvents.map((liveEvent, index) => {
         return(
           <ul key={index}>
             <li><h2><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h2></li>
