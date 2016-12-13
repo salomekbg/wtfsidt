@@ -19,7 +19,7 @@ class Restaurants extends Component {
       return (
           <ul key={index}>
             <li><h2>{restaurant.name}</h2></li>
-            <li>Rating: {restaurant.rating}</li>
+            <li>Yelp Rating: {restaurant.rating}</li>
             <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>
             <li>Phone: {restaurant.phone}</li>
             <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
