@@ -21,6 +21,7 @@ class Restaurants extends Component {
     restaurants = combo[0].map((restaurant, index) => {
       return (
           <ul key={index}>
+            <li><img src={restaurant.image} /></li>
             <li><h2><a href={restaurant.url} target="_blank">{restaurant.name}</a></h2></li>
             <li>Yelp Rating: {restaurant.rating}</li>
             <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>

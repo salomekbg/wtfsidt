@@ -11,6 +11,7 @@ export default function getRestaurant(zipcode){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
+      debugger
       dispatch({type: 'SHOW_RESTAURANTS', restaurant_info: response})
       browserHistory.push('/restaurants')
     })
