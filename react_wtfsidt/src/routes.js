@@ -9,6 +9,8 @@ import Favorites from './components/Favorites';
 import Movies from './components/Movies';
 import Events from './components/Events';
 import Bars from './components/Bars';
+import Concerts from './components/Concerts';
+
 
 export default (
   <Route path="/" component={App} >
@@ -20,5 +22,6 @@ export default (
     <Route path="movies" component={Movies} />
     <Route path="events" component={Events} />
     <Route path="bars" component={Bars} />
+    <Route path="concerts" component={Concerts} />
   </Route>
 )

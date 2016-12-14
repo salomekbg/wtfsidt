@@ -11,9 +11,8 @@ export default function getConcert(zipcode){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      debugger
       dispatch({type: 'SHOW_CONCERTS', concert_info: response})
-      browserHistory.push('/Concerts')
+      browserHistory.push('/concerts')
     })
   }
 }

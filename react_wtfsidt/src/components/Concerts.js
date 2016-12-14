@@ -3,9 +3,20 @@ import { connect } from 'react-redux';
 
 class Concerts extends Component {
   render(){
+    var concerts = this.props.concerts.concert_info.map((concert, index) => {
+      return (
+        <ul key={index}>
+          <li><h2><a href={concert.ticket_url} target="_blank">{concert.artist}</a></h2></li>
+          <li>{concert.venue_name}</li>
+          <li>{concert.venue_address}, {concert.venue_city}</li><br />
+          <li className="last"><u>Start Time:</u> {concert.start_time}</li>
+        </ul>
+      )
+
+    })
     return(
-      <div>
-        Concerts go here!
+      <div className="main">
+        {concerts}
       </div>
     )
   }
@@ -13,7 +24,7 @@ class Concerts extends Component {
 
 function mapStateToProps(state){
   return {
-    movies: state.concertsReducer.concerts
+    concerts: state.concertsReducer.concerts
   }
 }
 
