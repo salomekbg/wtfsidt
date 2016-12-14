@@ -93,9 +93,19 @@ textarea {
 li img {
   float: left;
   width: 100px;
-  padding-right: 50px;
+  padding-top: 5px;
+  padding-right: 25px;
+  padding-bottom: 20px;
 }
 
-.movie {
+.movielist {
+  margin-bottom: 75px;
+}
+
+.restaurantlist {
+  margin-bottom: 50px;
+}
+
+.eventlist {
   margin-bottom: 75px;
 }

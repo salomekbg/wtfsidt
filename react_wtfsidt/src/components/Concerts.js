@@ -9,7 +9,7 @@ class Concerts extends Component {
           <li><h2><a href={concert.ticket_url} target="_blank">{concert.artist}</a></h2></li>
           <li>{concert.venue_name}</li>
           <li>{concert.venue_address}, {concert.venue_city}</li><br />
-          <li className="last"><u>Start Time:</u> {concert.start_time}</li>
+          <li><u>Start Time:</u> {concert.start_time}</li>
         </ul>
       )
 

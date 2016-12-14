@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../Events.css';
 
 class Events extends Component {
   render(){
@@ -14,10 +15,11 @@ class Events extends Component {
       } else {
       liveEvents = this.props.liveEvents.map((liveEvent, index) => {
         return(
-          <ul key={index}>
+          <ul key={index} className="eventlist">
+          <li><img src={liveEvent.image_url} /></li>
             <li><h2><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h2></li>
             <li>{liveEvent.description}</li><br />
-            <li><u>Start Time:</u> {liveEvent.start_time}</li><br />
+            <li>Start Time: {liveEvent.start_time}</li><br />
           </ul>
         )
       })}
