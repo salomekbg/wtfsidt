@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
-import getTV from '../actions/getTV'
 
 class Shows extends Component {
-
   render(){
-      if(this.props.shows.length === 0){
-        var shows = function(){
-          return(
-            <ul>
-              <li>No TV Shows!</li>
+    var streamingMovies = this.props.shows.movies_results.map((movie, index) => {
+      return (
+          <div key={index} className='stream-movie'>
+            <ul key={index}>
+              <li><img src={movie.image} alt='movie' /></li>
+              <li><h2><a href={movie.url} target="_blank">{movie.title}</a></h2></li>
+              <li>Rated: {movie.rating}</li>
+              <li className="last"><u>Release Date:</u> {movie.release_date}</li>
             </ul>
-          )
-        }
-      } else {
-      shows = this.props.shows.map((show, index) => {
-        return(
-          <ul key={index}>
-            <li>shows go here</li>
-          </ul>
-        )
-      })}
+          </div>
+
+      )
+    })
+
+    var streamingShows = this.props.shows.shows_results.map((show, index) => {
+      return (
+          <div key={index} className='stream-show'>
+            <ul key={index}>
+              <li><img src={show.image} alt='show' /></li>
+              <li><h2><a href={show.url} target="_blank">{show.title}</a></h2></li>
+              <li className="last"><u>First Aired:</u> {show.first_aired}</li>
+            </ul>
+          </div>
+      )
+    })
 
     return(
       <div className="main">
-        {shows}
+        {streamingMovies}
+        {streamingShows}
       </div>
     )
   }
@@ -38,8 +45,4 @@ function mapStateToProps(state){
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getTV }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Shows);
+export default connect(mapStateToProps)(Shows);
