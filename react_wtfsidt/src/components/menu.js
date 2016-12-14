@@ -7,6 +7,7 @@ import getLiveEvent from '../actions/getLiveEvent';
 import setZipCode from '../actions/setZipCode';
 import getConcert from '../actions/getConcert';
 import getBar from '../actions/getBar';
+import getTV from '../actions/getTV'
 
 class Index extends Component {
   render(){
@@ -20,7 +21,7 @@ class Index extends Component {
         <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
         <button onClick={this.handleLiveEventsButtonClick.bind(this)}>Get Live Events</button>
         <button onClick={this.handleConcertButtonClick.bind(this)}>Get Concerts</button>
-        <button>On TV?</button>
+        <button onClick={this.handleTVButtonClick.bind(this)}>On TV?</button>
         <button>Choose For Me!</button>
       </div>
     )
@@ -29,6 +30,11 @@ class Index extends Component {
   handleBarButtonClick(event){
     event.preventDefault()
     this.props.getBar(this.props.zipcode)
+  }
+
+  handleTVButtonClick(event){
+    event.preventDefault()
+    this.props.getTV(this.props.zipcode)
   }
 
   handleOnZipCodeChange(event){
@@ -83,7 +89,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode, getConcert, getBar }, dispatch)
+  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode, getConcert, getBar, getTV }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

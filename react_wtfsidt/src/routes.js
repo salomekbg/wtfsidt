@@ -10,6 +10,7 @@ import Movies from './components/Movies';
 import Events from './components/Events';
 import Bars from './components/Bars';
 import Concerts from './components/Concerts';
+import TVShows from './components/TVShows'
 
 
 export default (
@@ -23,5 +24,6 @@ export default (
     <Route path="events" component={Events} />
     <Route path="bars" component={Bars} />
     <Route path="concerts" component={Concerts} />
+    <Route path="tv" component={TVShows} />
   </Route>
 )
