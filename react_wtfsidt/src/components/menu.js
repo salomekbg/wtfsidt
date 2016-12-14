@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import getMovie from '../actions/getMovie';
-import getRestaurant from '../actions/getRestaurant'
-import getLiveEvent from '../actions/getLiveEvent'
-import setZipCode from '../actions/setZipCode'
-import getConcert from '../actions/getConcert'
+import getRestaurant from '../actions/getRestaurant';
+import getLiveEvent from '../actions/getLiveEvent';
+import setZipCode from '../actions/setZipCode';
+import getConcert from '../actions/getConcert';
+import getBar from '../actions/getBar';
 
 class Index extends Component {
   render(){
@@ -15,13 +16,19 @@ class Index extends Component {
         <input type='number' onChange={this.handleOnZipCodeChange.bind(this)} value={this.props.zipcode} />
         <br/><br/>
         <button onClick={this.handleRestaurantButtonClick.bind(this)}>Get Restaurants</button>
+        <button onClick={this.handleBarButtonClick.bind(this)}>Get Bars</button>
         <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
         <button onClick={this.handleLiveEventsButtonClick.bind(this)}>Get Live Events</button>
         <button onClick={this.handleConcertButtonClick.bind(this)}>Get Concerts</button>
-        <button>What is on TV</button>
+        <button>On TV?</button>
         <button>Choose For Me!</button>
       </div>
     )
+  }
+
+  handleBarButtonClick(event){
+    event.preventDefault()
+    this.props.getBar(this.props.zipcode)
   }
 
   handleOnZipCodeChange(event){
@@ -76,7 +83,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode, getConcert }, dispatch)
+  return bindActionCreators({ getMovie, getRestaurant, getLiveEvent, setZipCode, getConcert, getBar }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

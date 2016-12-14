@@ -39,10 +39,6 @@ class Restaurants extends Component {
     )
   }
 
-  componentWillMount(){
-
-  }
-
   handleFavoriteCheckBox(event){
     this.props.setFavorite(event.target.id, event.target.checked)
   }
