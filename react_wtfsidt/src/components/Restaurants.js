@@ -21,11 +21,10 @@ class Restaurants extends Component {
     restaurants = combo[0].map((restaurant, index) => {
       return (
           <ul key={index}>
-            <li><h2>{restaurant.name}</h2></li>
+            <li><h2><a href={restaurant.url} target="_blank">{restaurant.name}</a></h2></li>
             <li>Yelp Rating: {restaurant.rating}</li>
             <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>
-            <li>Phone: {restaurant.phone}</li>
-            <li className="last"><a href={restaurant.url} target="_blank">URL: Find on Yelp</a></li>
+            {restaurant.phone !== null ? <li className="last">Phone: {restaurant.phone}</li> : null}
             <label htmlFor="fav_restaurant">Mark as Favorite</label>
             {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
             <br />
