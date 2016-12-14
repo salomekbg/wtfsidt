@@ -16,8 +16,8 @@ class Events extends Component {
         return(
           <ul key={index}>
             <li><h2><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h2></li>
-            <li>{liveEvent.description}</li>
-            <li>Start Time: {liveEvent.start_time}</li>
+            <li>{liveEvent.description}</li><br />
+            <li><u>Start Time:</u> {liveEvent.start_time}</li><br />
           </ul>
         )
       })}
