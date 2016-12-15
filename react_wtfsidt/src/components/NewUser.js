@@ -35,7 +35,7 @@ class NewUser extends Component {
           <p><input className="form-control" type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
           <h3><label>Password:</label></h3>
           <p><input className="form-control" type="password" onChange={this.handleOnPasswordChange.bind(this)}></input></p>
-          <p><button type="submit" className="btn btn-lg btn-success">Create</button></p>
+          <p><button type="submit" className="btn btn-lg btn-primary">Create</button></p>
         </form>
       </div>
     );
