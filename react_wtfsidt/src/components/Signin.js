@@ -35,7 +35,7 @@ class Signin extends Component {
           <p><input className="form-control" type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
           <h3><label>Password:</label></h3>
           <p><input className="form-control" type="password" onChange={this.handleOnPasswordChange.bind(this)}></input></p>
-          <p><button className="btn btn-lg btn-success" type="submit">Submit</button></p>
+          <p><button className="btn btn-lg btn-primary" type="submit">Submit</button></p>
         </form>
       </div>
     );

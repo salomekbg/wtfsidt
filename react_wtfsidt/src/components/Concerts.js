@@ -5,11 +5,11 @@ class Concerts extends Component {
   render(){
     var concerts = this.props.concerts.concert_info.map((concert, index) => {
       return (
-        <ul key={index}>
-          <li><h2><a href={concert.ticket_url} target="_blank">{concert.artist}</a></h2></li>
-          <li>{concert.venue_name}</li>
+        <ul key={index} className="list">
+          <li><h2>{concert.ticket_url ? <a href={concert.ticket_url} target="_blank">{concert.artist}</a> : concert.artist}</h2></li>
+          <li>Location: {concert.venue_name}</li>
           <li>{concert.venue_address}, {concert.venue_city}</li><br />
-          <li className="last"><u>Start Time:</u> {concert.start_time}</li>
+          <li><u>Start Time:</u> {concert.start_time}</li>
         </ul>
       )
 

@@ -25,7 +25,7 @@ h1 {
 
 h2 {
   color: white;
-  font-family: 'Cherry Cream Soda', cursive;
+  font-family: 'Comfortaa', cursive;
   text-decoration: underline;
 }
 
@@ -58,10 +58,15 @@ a {
   font-family: 'Comfortaa', cursive;
   text-decoration: none;
   color: white;
-  text-shadow: 2px 1px black;
 }
 
-a:hover {
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+#nav-buttons a,
+#sign-in a {
   color: white;
 }
 
@@ -108,18 +113,63 @@ textarea {
   height: 100px;
 }
 
-li img {
+.restbar {
   float: left;
   width: 100px;
-  padding-right: 50px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 20px;
 }
 
 .movie {
-  margin-bottom: 75px;
+  float: left;
+  width: 200px;
+  padding-right: 25px;
+  padding-bottom: 20px;
 }
 
-.restaurants .col-md-4 {
+.event {
+  float: left;
+  width: 100px;
+  padding-top: 5px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+}
+
+.tv {
+  float: left;
+  width: 100px;
+  padding-top: 5px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
+.movielist {
+  margin-bottom: 100px;
+}
+
+.list {
+  margin-bottom: 50px;
+}
+
+.tvlist {
+  margin-bottom: 100px;
+}
+
+.tvlist2 {
+  margin-bottom: 50px;
+}
+
+.shift {
+  font-size: 3em;
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+
+.restaurants .col-md-4,
+.bars .col-md-4 {
   margin-bottom: 2em;
+  text-align: center;
 }
 
 .favorite-item .rating-field,
@@ -133,4 +183,10 @@ li img {
 
 .favorite-item .notes-field {
   width: 75%
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 95%;
+  }
 }
