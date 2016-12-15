@@ -13,7 +13,6 @@ export default function createUser(formValues){
     }).done(function(response){
       if (response.error){
         alert('Please check username and password.')
-        browserHistory.push('/newuser')
       } else {
         localStorage.setItem('jwt', response.jwt)
         dispatch({type: 'LOGIN_USER', current_user: response.current_user})

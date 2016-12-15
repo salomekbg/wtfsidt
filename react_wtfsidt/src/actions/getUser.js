@@ -10,9 +10,13 @@ export default function getUser(formValues){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      localStorage.setItem('jwt', response.jwt)
-      dispatch({type: 'LOGIN_USER', current_user: response.current_user})
-      browserHistory.push('/menu')
+      if(response.error){
+        alert(response.error)
+      } else {
+        localStorage.setItem('jwt', response.jwt)
+        dispatch({type: 'LOGIN_USER', current_user: response.current_user})
+        browserHistory.push('/menu')
+      }
     })
     // 1. make an ajax request to my rails
     // 2. rails will create the user, and in exchange give me back a
