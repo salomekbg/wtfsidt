@@ -29,13 +29,14 @@ class Signin extends Component {
   render() {
     return (
       <div className="account_info form-group">
-          <form onSubmit={this.handleSubmit.bind(this)}>
-            <h3><label>Username:</label></h3>
-            <p><input className="form-control" type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
-            <h3><label>Password:</label></h3>
-            <p><input className="form-control" type="password" onChange={this.handleOnPasswordChange.bind(this)}></input></p>
-            <p><button className="btn btn-lg btn-success" type="submit">Submit</button></p>
-          </form>
+        <h2>Sign In</h2>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <h3><label>Username:</label></h3>
+          <p><input className="form-control" type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
+          <h3><label>Password:</label></h3>
+          <p><input className="form-control" type="password" onChange={this.handleOnPasswordChange.bind(this)}></input></p>
+          <p><button className="btn btn-lg btn-success" type="submit">Submit</button></p>
+        </form>
       </div>
     );
   }
