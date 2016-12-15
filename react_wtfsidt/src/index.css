@@ -127,10 +127,17 @@ textarea {
 
 .movie {
   float: left;
-  width: 200px;
-  height: 280px;
-  padding-right: 25px;
-  padding-bottom: 20px;
+  width: 150px;
+  height: 215px;
+  padding-right: 5px;
+}
+
+.tv {
+  float: left;
+  width: 150px;
+  height: 100px;
+  padding-top: 15px;
+  padding-right: 5px;
 }
 
 .event {
@@ -141,34 +148,8 @@ textarea {
   padding-bottom: 10px;
 }
 
-.tv {
-  float: left;
-  width: 100px;
-  padding-top: 5px;
-  padding-right: 25px;
-  padding-bottom: 20px;
-}
-
-.movielist {
-  margin-bottom: 100px;
-}
-
-.list {
-  margin-bottom: 50px;
-}
-
-.tvlist {
-  margin-bottom: 100px;
-}
-
-.tvlist2 {
-  margin-bottom: 50px;
-}
-
 .shift {
-  font-size: 3em;
-  padding-left: 40px;
-  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
 .components .col-md-4 {
