@@ -60,7 +60,8 @@ a:hover {
   color: white;
 }
 
-#sign-in {
+#sign-in,
+#nav-buttons {
   margin-left: 37%;
 }
 

@@ -17,11 +17,11 @@ class App extends Component {
       )
     } else {
       signIn = (
-        <ul>
-          <li className="main_links" onClick={this.handleLogOut.bind(this)}><Link to={'/'}>Sign Out</Link></li>
-          <li className="main_links" onClick={this.handleFavoritesClick.bind(this)}><Link to={'/favorites'}>Favorites</Link></li>
-          <li className="main_links"><Link to={'/menu'}>Menu</Link></li>
-        </ul>
+        <div className='btn-group btn-group-lg' id="nav-buttons">
+          <button className="btn btn-success main_links" onClick={this.handleLogOut.bind(this)}><Link to={'/'}>Sign Out</Link></button>
+          <button className="btn btn-success main_links" onClick={this.handleFavoritesClick.bind(this)}><Link to={'/favorites'}>Favorites</Link></button>
+          <button className="btn btn-success main_links"><Link to={'/menu'}>Menu</Link></button>
+        </div>
       )
     }
 
