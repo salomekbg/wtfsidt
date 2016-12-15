@@ -25,7 +25,7 @@ h1 {
 
 h2 {
   color: white;
-  font-family: 'Cherry Cream Soda', cursive;
+  font-family: 'Comfortaa', cursive;
   text-decoration: underline;
 }
 
@@ -90,7 +90,30 @@ textarea {
   height: 100px;
 }
 
-li img {
+.restbar {
+  float: left;
+  width: 100px;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
+.movie {
+  float: left;
+  width: 100px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
+.event {
+  float: left;
+  width: 100px;
+  padding-top: 5px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+}
+
+.tv {
   float: left;
   width: 100px;
   padding-top: 5px;
@@ -99,13 +122,23 @@ li img {
 }
 
 .movielist {
-  margin-bottom: 75px;
+  margin-bottom: 100px;
 }
 
-.restaurantlist {
+.list {
   margin-bottom: 50px;
 }
 
-.eventlist {
-  margin-bottom: 75px;
+.tvlist {
+  margin-bottom: 100px;
+}
+
+.tvlist2 {
+  margin-bottom: 50px;
+}
+
+.shift {
+  font-size: 3em;
+  padding-left: 40px;
+  padding-bottom: 10px;
 }

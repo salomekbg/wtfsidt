@@ -20,8 +20,8 @@ class Bars extends Component {
     } else {
     bars = combo[0].map((bar, index) => {
       return (
-        <ul key={index} className="restaurantlist">
-          <li><img src={bar.image} /></li>
+        <ul key={index} className="list">
+          <li><img className="restbar" src={bar.image} /></li>
           <li><h2><a href={bar.url} target="_blank">{bar.name}</a></h2></li>
           <li>Yelp Rating: {bar.rating}</li>
           <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>

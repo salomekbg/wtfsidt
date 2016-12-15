@@ -21,7 +21,7 @@ class Index extends Component {
         <button onClick={this.handleMovieButtonClick.bind(this)}>Get Movies</button>
         <button onClick={this.handleLiveEventsButtonClick.bind(this)}>Get Live Events</button>
         <button onClick={this.handleConcertButtonClick.bind(this)}>Get Concerts</button>
-        <button onClick={this.handleTVButtonClick.bind(this)}>On TV?</button>
+        <button onClick={this.handleTVButtonClick.bind(this)}>Get Streaming</button>
         <button>Choose For Me!</button>
       </div>
     )
