@@ -85,11 +85,12 @@ a:hover {
 
 div .main {
   text-align: left;
-  font-size: .6em;
   color: yellow;
+  font-size: 1.2em;
   background-color: rgba(0, 0 , 0, .5);
   padding-top: 10px;
   padding-bottom: 10px;
+  list-style: none;
 }
 
 div .favorite {
@@ -120,4 +121,8 @@ li img {
 
 .movie {
   margin-bottom: 75px;
+}
+
+.restaurants .col-md-4 {
+  margin-bottom: 2em;
 }

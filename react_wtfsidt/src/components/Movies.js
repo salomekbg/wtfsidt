@@ -14,7 +14,7 @@ class Movies extends Component {
       }
       return(
         <ul key={index} className="movie">
-          {movie.image_url === "NO IMAGE" ? <li><img src="https://s28.postimg.org/gwri9yx1p/no_img.jpg" alt='no picture found'/></li> : <li><img src={movie.image_url} alt='movie pic'/></li>}
+          {movie.image_url === "NO IMAGE" ? <li><img src="https://s28.postimg.org/gwri9yx1p/no_img.jpg" alt='none'/></li> : <li><img src={movie.image_url} alt='movie'/></li>}
           <li><h2><a href={movieUrl} target="_blank">{movie.title}</a></h2></li>
           <li>{movie.description}</li><br />
           <li><u>Genres:</u> {movie.genres.join(', ')}</li>

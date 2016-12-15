@@ -20,22 +20,24 @@ class Restaurants extends Component {
     } else {
     restaurants = combo[0].map((restaurant, index) => {
       return (
-          <ul key={index}>
-            <li><img src={restaurant.image} /></li>
-            <li><h2><a href={restaurant.url} target="_blank">{restaurant.name}</a></h2></li>
-            <li>Yelp Rating: {restaurant.rating}</li>
-            <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>
-            {restaurant.phone !== null ? <li className="last">Phone: {restaurant.phone}</li> : null}
-            <label htmlFor="fav_restaurant">Mark as Favorite</label>
-            {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
-            <br />
-          </ul>
+        <div className="col-md-4" key={index}>
+          <h3><a href={restaurant.url} target="_blank">{restaurant.name}</a></h3>
+          <img src={restaurant.image} />
+          <li>Yelp Rating: {restaurant.rating}</li>
+          <li>{restaurant.address}</li>
+          <li>{restaurant.city} {restaurant.zipcode}</li>
+          {restaurant.phone !== null ? <li className="last">Phone: {restaurant.phone}</li> : null}
+          <label htmlFor="fav_restaurant">Mark as Favorite </label>
+          {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
+        </div>
       )
     })}
 
     return(
-      <div className="main">
+      <div className="container main restaurants">
+        <div className="row">
         {restaurants}
+        </div>
       </div>
     )
   }
