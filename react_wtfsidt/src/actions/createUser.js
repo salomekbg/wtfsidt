@@ -11,9 +11,14 @@ export default function createUser(formValues){
       dataType: 'json',
       contentType: 'application/json; charset=utf-8'
     }).done(function(response){
-      localStorage.setItem('jwt', response.jwt)
-      dispatch({type: 'LOGIN_USER', current_user: response.current_user})
-      browserHistory.push('/menu')
+      if (response.error){
+        alert('Please check username and password.')
+        browserHistory.push('/newuser')
+      } else {
+        localStorage.setItem('jwt', response.jwt)
+        dispatch({type: 'LOGIN_USER', current_user: response.current_user})
+        browserHistory.push('/menu')
+      }
     })
   }
 }
