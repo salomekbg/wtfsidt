@@ -28,14 +28,14 @@ class NewUser extends Component {
 
   render() {
     return (
-      <div className="account_info">
+      <div className="account_info form-group">
         <h2>Create New Account</h2>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <p><label>Username:</label></p>
-          <p><input type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
-          <p><label>Password:</label></p>
-          <p><input type="password" onChange={this.handleOnPasswordChange.bind(this)}></input></p>
-          <p><input type="submit" value="Submit"></input></p>
+          <h3><label>Username:</label></h3>
+          <p><input className="form-control" type="text" onChange={this.handleOnNameChange.bind(this)}></input></p>
+          <h3><label>Password:</label></h3>
+          <p><input className="form-control" type="password" onChange={this.handleOnPasswordChange.bind(this)}></input></p>
+          <p><button type="submit" className="btn btn-lg btn-success">Create</button></p>
         </form>
       </div>
     );

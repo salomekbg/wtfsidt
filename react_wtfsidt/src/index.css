@@ -34,11 +34,19 @@ ul {
   font-size: 1.5em;
 }
 
+input {
+  color: black;
+}
+
 .main_links {
   padding-bottom: 30px;
   text-align: center;
   display: inline;
   padding: 0 30px;
+}
+
+.form-control {
+  height: 100%;
 }
 
 a {
@@ -49,16 +57,29 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: white;
+}
+
+#sign-in {
+  margin-left: 37%;
+}
+
+#sign-in .btn {
+  font-size: 3em;
 }
 
 .account_info {
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 50px;
+  padding: 10px 20px;
   background-color: rgba(0, 0 , 0, .5);
   text-shadow: 2px 1px black;
+}
+
+.account_info input {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 3em;
+  letter-spacing: 0.1em;
 }
 
 div .main {
