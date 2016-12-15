@@ -42,13 +42,6 @@ input {
   font-size: 3em;
 }
 
-.main_links {
-  padding-bottom: 30px;
-  text-align: center;
-  display: inline;
-  padding: 0 30px;
-}
-
 .form-control {
   height: 100%;
 }
@@ -84,7 +77,7 @@ a:visited {
 
 #sign-in,
 #nav-buttons {
-  margin-left: 37%;
+  margin-left: 42%;
 }
 
 #sign-in .btn {
