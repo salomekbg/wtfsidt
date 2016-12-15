@@ -64,8 +64,13 @@ a:visited {
   text-decoration: none;
 }
 
-.event {
+.event,
+.concert {
   margin-bottom: 3em;
+}
+
+.concert h3 {
+  color: white;
 }
 
 .event img {
