@@ -16,7 +16,6 @@ class FavoriteItem extends Component {
   }
 
   render(){
-    debugger
     return(
       <div className='col-md-6 favorite-item'>
         <h2><a href={this.props.fav[1].url} target='_blank'>{this.props.fav[1].name}</a></h2>
