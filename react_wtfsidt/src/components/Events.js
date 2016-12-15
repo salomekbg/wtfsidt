@@ -14,16 +14,16 @@ class Events extends Component {
       } else {
       components = this.props.liveEvents.map((liveEvent, index) => {
         return(
-          <div key={index} className="col-md-12">
+          <div key={index} className="col-md-12 event">
             <div className="row">
-              <div className="col-md-3">
+              <div className="col-md-1">
                 <img src={liveEvent.image_url} />
-                <div className="col-md-9">
+              </div>
+                <div className="col-md-11">
                   <h2><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h2>
                   {liveEvent.description !== null ? <li className="description">{liveEvent.description}</li> : <li>No Description Available<br /></li>}<br />
                   <li><u>Start Time:</u> {liveEvent.start_time}</li>
                 </div>
-              </div>
             </div>
           </div>
         )

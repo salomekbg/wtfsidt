@@ -64,6 +64,14 @@ a:visited {
   text-decoration: none;
 }
 
+.event {
+  margin-bottom: 3em;
+}
+
+.event img {
+  padding-top: 1.5em;
+}
+
 #nav-buttons a,
 #sign-in a {
   color: white;
@@ -138,14 +146,6 @@ textarea {
   height: 100px;
   padding-top: 15px;
   padding-right: 5px;
-}
-
-.event {
-  float: left;
-  width: 100px;
-  padding-top: 5px;
-  padding-right: 25px;
-  padding-bottom: 10px;
 }
 
 .shift {
