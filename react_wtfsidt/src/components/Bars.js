@@ -16,9 +16,9 @@ class Bars extends Component {
     var combo = [];
     for (var bar in this.props.bars) {combo.push(this.props.bars[bar])}
     if(this.props.bars.length === 0){
-      var bars = <li>You have no bars</li>
+      var components = <li>You have no bars</li>
     } else {
-    bars = combo[0].map((bar, index) => {
+    components = combo[0].map((bar, index) => {
       return (
         <div key={index} className="col-md-4">
           <h3><a href={bar.url} target="_blank">{bar.name}</a></h3>
@@ -34,10 +34,10 @@ class Bars extends Component {
     })}
 
     return(
-      <div className="container main bars">
-        <div className="row">
-          {bars}
-          </div>
+      <div className='container main components'>
+        <div className='row'>
+          {components}
+        </div>
       </div>
     )
   }

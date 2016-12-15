@@ -166,8 +166,7 @@ textarea {
   padding-bottom: 10px;
 }
 
-.restaurants .col-md-4,
-.bars .col-md-4 {
+.components .col-md-4 {
   margin-bottom: 2em;
   text-align: center;
 }

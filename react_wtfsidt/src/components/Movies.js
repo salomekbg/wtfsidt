@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Movies extends Component {
   render(){
-    var movies = this.props.movies.map((movie, index) => {
+    var components = this.props.movies.map((movie, index) => {
       var re = /http:\D*\d*[^&d]/
       var movieUrl;
       for(var i = 0; i<movie.showtimes.length; i++){
@@ -13,18 +13,20 @@ class Movies extends Component {
         }
       }
       return(
-        <ul key={index} className="movielist">
+        <div key={index} className="col-md-4">
           {movie.image_url === "NO IMAGE" ? <li><img className="movie" src="https://s28.postimg.org/gwri9yx1p/no_img.jpg" alt='no picture found'/></li> : <li><img className="movie" src={movie.image_url} alt='movie pic'/></li>}
-          <li><h2><a href={movieUrl} target="_blank">{movie.title}</a></h2></li>
+          <h3><a href={movieUrl} target="_blank">{movie.title}</a></h3>
           <li>{movie.description}</li><br />
           <li>Genres: {movie.genres.join(', ')}</li>
-        </ul>
+        </div>
       )
     }, this)
 
     return(
-      <div className='main'>
-        {movies}
+      <div className='container main components'>
+        <div className='row'>
+          {components}
+        </div>
       </div>
     )
   }
