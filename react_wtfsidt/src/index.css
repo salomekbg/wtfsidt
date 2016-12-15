@@ -25,13 +25,21 @@ h1 {
 
 h2 {
   color: white;
-  font-family: 'Cherry Cream Soda', cursive;
+  font-family: 'Comfortaa', cursive;
   text-decoration: underline;
 }
 
 ul {
   list-style-type: none;
-  font-size: 1.5em;
+}
+
+input {
+  color: black;
+}
+
+.no-items {
+  text-align: center;
+  font-size: 3em;
 }
 
 .main_links {
@@ -41,48 +49,75 @@ ul {
   padding: 0 30px;
 }
 
+.form-control {
+  height: 100%;
+}
+
 a {
   font-family: 'Comfortaa', cursive;
   text-decoration: none;
   color: white;
-  text-shadow: 2px 1px black;
 }
 
-a:hover {
-  color: red;
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+.event,
+.concert {
+  margin-bottom: 3em;
+}
+
+.concert h3 {
+  color: white;
+}
+
+.event img {
+  padding-top: 1.5em;
+}
+
+#nav-buttons a,
+#sign-in a {
+  color: white;
+}
+
+#sign-in,
+#nav-buttons {
+  margin-left: 37%;
+}
+
+#sign-in .btn {
+  font-size: 3em;
 }
 
 .account_info {
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 50px;
+  padding: 10px 20px;
   background-color: rgba(0, 0 , 0, .5);
   text-shadow: 2px 1px black;
 }
 
-div .main {
-  text-align: left;
-  font-size: .6em;
-  color: yellow;
-  background-color: rgba(0, 0 , 0, .5);
-  padding-top: 10px;
-  padding-bottom: 10px;
+.account_info input {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 3em;
+  letter-spacing: 0.1em;
 }
 
-div .favorite {
-  font-size: .9em;
+.main,
+.favorite {
+  text-align: left;
+  color: yellow;
+  font-size: 1.2em;
   background-color: rgba(0, 0 , 0, .5);
   padding-top: 10px;
   padding-bottom: 10px;
-  text-align: left;
-  color: yellow;
+  list-style: none;
 }
 
 button {
-  margin-left: 10px;
   margin-right: 10px;
-
 }
 
 textarea {
@@ -90,22 +125,58 @@ textarea {
   height: 100px;
 }
 
-li img {
+.restbar {
   float: left;
   width: 100px;
-  padding-top: 5px;
+  height: 100px;
+  padding-top: 20px;
   padding-right: 25px;
   padding-bottom: 20px;
 }
 
-.movielist {
-  margin-bottom: 75px;
+.height {
+  height: 100px;
 }
 
-.restaurantlist {
-  margin-bottom: 50px;
+.movie {
+  float: left;
+  width: 150px;
+  height: 215px;
+  padding-right: 5px;
 }
 
-.eventlist {
-  margin-bottom: 75px;
+.tv {
+  float: left;
+  width: 150px;
+  height: 100px;
+  padding-top: 15px;
+  padding-right: 5px;
+}
+
+.shift {
+  padding-left: 20px;
+}
+
+.components .col-md-4 {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.favorite-item .rating-field,
+.favorite-item .notes-field {
+  margin-bottom: 1em;
+}
+
+.favorite-item .rating-field {
+  width: 25%;
+}
+
+.favorite-item .notes-field {
+  width: 75%
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 95%;
+  }
 }

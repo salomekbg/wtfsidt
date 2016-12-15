@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class Favorites extends Component {
   render(){
     if(this.props.favorites.length === 0){
-      var favoriteList = <li>You have no favorites!</li>
+      var favoriteList = <li className='no-items'>You have no favorites!</li>
     } else {
     favoriteList = this.props.favorites.map((favorite, index) => {
       return (
@@ -13,9 +13,11 @@ class Favorites extends Component {
       )
     })}
     return(
-      <ul className='favorite'>
-        {favoriteList}
-      </ul>
+      <div className='favorite container'>
+        <div className='row'>
+          {favoriteList}
+          </div>
+      </div>
     )
   }
 }

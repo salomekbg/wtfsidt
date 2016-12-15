@@ -16,27 +16,29 @@ class Restaurants extends Component {
     var combo = [];
     for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
     if(this.props.restaurants.length === 0){
-      var restaurants = <li>You have no restaurants</li>
+      var components = <li>You have no restaurants</li>
     } else {
-    restaurants = combo[0].map((restaurant, index) => {
+    components = combo[0].map((restaurant, index) => {
       return (
-          <ul key={index} className="restaurantlist">
-            <li><img src={restaurant.image} /></li>
-            <li><h2><a href={restaurant.url} target="_blank">{restaurant.name}</a></h2></li>
-            <li>Yelp Rating: {restaurant.rating}</li>
-            <li>Address: {restaurant.address}, {restaurant.city} {restaurant.zipcode}</li>
-            {restaurant.phone !== null ? <li>Phone: {restaurant.phone}</li> : null}
-            <li>Categories: {restaurant.categories}</li>
-            <label htmlFor="fav_restaurant">Mark as Favorite</label>
-            {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
-            <br />
-          </ul>
+        <div className="col-md-4" key={index}>
+          <h3><a href={restaurant.url} target="_blank">{restaurant.name}</a></h3>
+          <li className="height">{restaurant.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={restaurant.image} />}</li>
+          <li>Yelp Rating: {restaurant.rating}</li>
+          <li>{restaurant.address}</li>
+          <li>{restaurant.city} {restaurant.zipcode}</li>
+          {restaurant.phone !== null ? <li className="last">Phone: {restaurant.phone}</li> : null}
+          <li>Categories: {restaurant.categories}</li>
+          <label htmlFor="fav_restaurant">Mark as Favorite </label>
+          {combo[1].includes(restaurant.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={restaurant.name} id={restaurant.id} />}
+        </div>
       )
     })}
 
     return(
-      <div className="main">
-        {restaurants}
+      <div className='container main components'>
+        <div className='row'>
+          {components}
+        </div>
       </div>
     )
   }

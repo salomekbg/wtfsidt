@@ -10,18 +10,18 @@ class App extends Component {
   render() {
     if(!localStorage.getItem('jwt')){
       var signIn = (
-        <ul>
-          <li className="main_links"><Link to={'/signin'}>Sign In</Link></li>
-          <li className="main_links"><Link to={'/newuser'}>Sign Up</Link></li>
-        </ul>
+        <div className='btn-group btn-group-lg' id="sign-in">
+          <button className='btn btn-primary'><Link to={'/signin'}>Sign In</Link></button>
+          <button className='btn btn-primary'><Link to={'/newuser'}>Sign Up</Link></button>
+        </div>
       )
     } else {
       signIn = (
-        <ul>
-          <li className="main_links" onClick={this.handleLogOut.bind(this)}><Link to={'/'}>Sign Out</Link></li>
-          <li className="main_links" onClick={this.handleFavoritesClick.bind(this)}><Link to={'/favorites'}>Favorites</Link></li>
-          <li className="main_links"><Link to={'/menu'}>Menu</Link></li>
-        </ul>
+        <div className='btn-group btn-group-lg' id="nav-buttons">
+          <button className="btn btn-primary main_links" onClick={this.handleLogOut.bind(this)}><Link to={'/'}>Sign Out</Link></button>
+          <button className="btn btn-primary main_links" onClick={this.handleFavoritesClick.bind(this)}><Link to={'/favorites'}>Favorites</Link></button>
+          <button className="btn btn-primary main_links"><Link to={'/menu'}>Menu</Link></button>
+        </div>
       )
     }
 

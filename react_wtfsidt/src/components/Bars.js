@@ -16,27 +16,30 @@ class Bars extends Component {
     var combo = [];
     for (var bar in this.props.bars) {combo.push(this.props.bars[bar])}
     if(this.props.bars.length === 0){
-      var bars = <li>You have no bars</li>
+      var components = <li>You have no bars</li>
     } else {
-    bars = combo[0].map((bar, index) => {
+    components = combo[0].map((bar, index) => {
       return (
-        <ul key={index} className="restaurantlist">
-          <li><img src={bar.image} /></li>
-          <li><h2><a href={bar.url} target="_blank">{bar.name}</a></h2></li>
-          <li>Yelp Rating: {bar.rating}</li>
-          <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>
-          {bar.phone !== null ? <li>Phone: {bar.phone}</li> : null}
-          <li>Categories: {bar.categories}</li>
-          <label htmlFor="fav_restaurant">Mark as Favorite</label>
-          {combo[1].includes(bar.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} />}
-          <br />
-        </ul>
+        <div key={index} className="col-md-4">
+          <h3><a href={bar.url} target="_blank">{bar.name}</a></h3>
+          <li className='height'>{bar.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={bar.image} />}</li>
+          <div className='height'>
+            <li>Yelp Rating: {bar.rating}</li>
+            <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>
+            {bar.phone !== null ? <li>Phone: {bar.phone}</li> : null}
+            <li>Categories: {bar.categories}</li>
+            <label htmlFor="fav_restaurant">Mark as Favorite</label>
+            {combo[1].includes(bar.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} />}
+          </div>
+        </div>
       )
     })}
 
     return(
-      <div className="main">
-        {bars}
+      <div className='container main components'>
+        <div className='row'>
+          {components}
+        </div>
       </div>
     )
   }
