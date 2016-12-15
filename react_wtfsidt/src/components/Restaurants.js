@@ -22,7 +22,7 @@ class Restaurants extends Component {
       return (
         <div className="col-md-4" key={index}>
           <h3><a href={restaurant.url} target="_blank">{restaurant.name}</a></h3>
-          <li>{restaurant.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={restaurant.image} />}</li>
+          <li className="height">{restaurant.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={restaurant.image} />}</li>
           <li>Yelp Rating: {restaurant.rating}</li>
           <li>{restaurant.address}</li>
           <li>{restaurant.city} {restaurant.zipcode}</li>

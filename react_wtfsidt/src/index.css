@@ -116,14 +116,20 @@ textarea {
 .restbar {
   float: left;
   width: 100px;
+  height: 100px;
   padding-top: 20px;
   padding-right: 25px;
   padding-bottom: 20px;
 }
 
+.height {
+  height: 100px;
+}
+
 .movie {
   float: left;
   width: 200px;
+  height: 280px;
   padding-right: 25px;
   padding-bottom: 20px;
 }

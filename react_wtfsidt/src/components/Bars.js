@@ -22,13 +22,15 @@ class Bars extends Component {
       return (
         <div key={index} className="col-md-4">
           <h3><a href={bar.url} target="_blank">{bar.name}</a></h3>
-          <li>{bar.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={bar.image} />}</li>
-          <li>Yelp Rating: {bar.rating}</li>
-          <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>
-          {bar.phone !== null ? <li>Phone: {bar.phone}</li> : null}
-          <li>Categories: {bar.categories}</li>
-          <label htmlFor="fav_restaurant">Mark as Favorite</label>
-          {combo[1].includes(bar.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} />}
+          <li className='height'>{bar.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={bar.image} />}</li>
+          <div className='height'>
+            <li>Yelp Rating: {bar.rating}</li>
+            <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>
+            {bar.phone !== null ? <li>Phone: {bar.phone}</li> : null}
+            <li>Categories: {bar.categories}</li>
+            <label htmlFor="fav_restaurant">Mark as Favorite</label>
+            {combo[1].includes(bar.id) ? <input type="checkbox" defaultChecked="true" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} /> : <input type="checkbox" onChange={this.handleFavoriteCheckBox.bind(this)} name={bar.name} id={bar.id} />}
+          </div>
         </div>
       )
     })}
