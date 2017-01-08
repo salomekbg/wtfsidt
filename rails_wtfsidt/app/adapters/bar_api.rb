@@ -2,10 +2,10 @@ class BarApi
 
   def self.client
     @client ||= Yelp::Client.new({
-      consumer_key: 'rCPjCJMrMc2naKiFJG1OuQ',
-      consumer_secret: '1vNPcyEIxqJPrtJwO4Xc5U59HNE',
-      token: 'SJmlEkBKLgtC6WMzsZAeWxQrMwUUIaKr',
-      token_secret: 'mmTFFzz8rlBGGn_dQvsqDHuOfcs'
+      consumer_key: yelp_consumer_key,
+      consumer_secret: yelp_consumer_secret,
+      token: yelp_token,
+      token_secret: yelp_token_secret
       })
   end
 
