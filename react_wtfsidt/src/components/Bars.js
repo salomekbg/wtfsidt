@@ -14,7 +14,8 @@ class Bars extends Component {
 
   render(){
     var combo = [];
-    for (var bar in this.props.bars) {combo.push(this.props.bars[bar])}
+    for (var i = 0; i < this.props.bars.length; i++) {combo.push(this.props.bars[i])}
+    // for (var bar in this.props.bars) {combo.push(this.props.bars[bar])}
     if(this.props.bars.length === 0){
       var components = <li>You have no bars</li>
     } else {

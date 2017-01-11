@@ -14,7 +14,8 @@ class Restaurants extends Component {
 
   render(){
     var combo = [];
-    for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
+    for (var i = 0; i<this.props.restaurants.length; i++) {combo.push(this.props.restaurants[i])}
+    // for (var restaurant in this.props.restaurants) {combo.push(this.props.restaurants[restaurant])}
     if(this.props.restaurants.length === 0){
       var components = <li>You have no restaurants</li>
     } else {
