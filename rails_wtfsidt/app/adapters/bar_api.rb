@@ -2,15 +2,14 @@ class BarApi
 
   def self.client
     @client ||= Yelp::Client.new({
-      consumer_key: ENV['YELP_CONSUMER_KEY']
-      consumer_secret: ENV['YELP_CONSUMER_SECRET']
-      token: ENV['YELP_TOKEN']
+      consumer_key: ENV['YELP_CONSUMER_KEY'],
+      consumer_secret: ENV['YELP_CONSUMER_SECRET'],
+      token: ENV['YELP_TOKEN'],
       token_secret: ENV['YELP_TOKEN_SECRET']
       })
   end
 
   def self.search(zipcode, term)
-    byebug
     results = client.search(zipcode, term)
     results.businesses.map do |result|
       if !Bar.find_by({yelp_id: result.id})
