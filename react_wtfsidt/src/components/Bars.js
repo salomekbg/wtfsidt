@@ -22,7 +22,7 @@ class Bars extends Component {
       return (
         <div key={index} className="col-md-4">
           <h3><a href={bar.url} target="_blank">{bar.name}</a></h3>
-          <li className='height'>{bar.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" /> : <img src={bar.image} />}</li>
+          <li className='height'>{bar.image === null ? <img src="https://s29.postimg.org/u899qm0lz/no_image.jpg" alt="placeholder" /> : <img src={bar.image} alt="placeholder" />}</li>
           <div className='height'>
             <li>Yelp Rating: {bar.rating}</li>
             <li>Address: {bar.address}, {bar.city} {bar.zipcode}</li>

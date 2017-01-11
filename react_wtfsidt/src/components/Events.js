@@ -17,7 +17,7 @@ class Events extends Component {
           <div key={index} className="col-md-12 event">
             <div className="row">
               <div className="col-md-1">
-                <img src={liveEvent.image_url} />
+                <img src={liveEvent.image_url} alt="placeholder" />
               </div>
                 <div className="col-md-11">
                   <h3><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h3>
