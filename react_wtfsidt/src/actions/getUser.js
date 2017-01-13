@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router'
 export default function getUser(formValues){
   return function (dispatch){
     $.ajax({
-      url: 'http://localhost:3000/signin',
+      url: 'https://rails-wsidt.herokuapp.com/signin',
       type: 'POST',
       data: JSON.stringify({user: {name: formValues.name, password: formValues.password}}),
       dataType: 'json',

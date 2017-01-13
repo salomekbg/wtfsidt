@@ -3,7 +3,7 @@ import $ from 'jquery';
 export default function updateFavorite(formValues){
   return function (dispatch){
     $.ajax({
-      url: `http://localhost:3000/favorites/${formValues.id}`,
+      url: `https://rails-wsidt.herokuapp.com/favorites/${formValues.id}`,
       type: 'PATCH',
       headers: {authorization: localStorage.getItem('jwt')},
       data: JSON.stringify({favorite: {rating: formValues.rating, notes: formValues.notes}}),

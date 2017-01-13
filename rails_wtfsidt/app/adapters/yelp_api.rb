@@ -1,13 +1,6 @@
 class YelpApi
 
   def self.client
-    # @client ||= Yelp::Client.new({
-    #   consumer_key: 'tDim-oA5sggT_lV1shpe8g',
-    #   consumer_secret: 'fxHaI-QTjueMgfrede8x3SFmm5Y',
-    #   token: 'r9vayQto-j_nGd-3a6oKaIBfxG-q1yCu',
-    #   token_secret: 'LTyyGzA5HpBI8_cUv6Sb53rhf-w'
-    #   })
-
     @client ||= Yelp::Client.new({
       consumer_key: ENV["YELP_CONSUMER_KEY"],
       consumer_secret: ENV["YELP_CONSUMER_SECRET"],

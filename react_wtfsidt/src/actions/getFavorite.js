@@ -3,7 +3,7 @@ import $ from 'jquery';
 export default function getFavorite(){
   return function (dispatch){
     $.ajax({
-      url: 'http://localhost:3000/favorites',
+      url: 'https://rails-wsidt.herokuapp.com/favorites',
       type: 'GET',
       headers: {authorization: localStorage.getItem('jwt')},
       dataType: 'json',
