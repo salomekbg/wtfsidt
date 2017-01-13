@@ -16,10 +16,10 @@ class Events extends Component {
         return(
           <div key={index} className="col-md-12 event">
             <div className="row">
-              <div className="col-md-1">
+              <div className="col-md-2">
                 <img src={liveEvent.image_url} alt="placeholder" />
               </div>
-                <div className="col-md-11">
+                <div className="col-md-10">
                   <h3><a href={liveEvent.url} target="_blank">{liveEvent.title}</a></h3>
                   {liveEvent.description !== null ? <li className="description">{liveEvent.description}</li> : <li>No Description Available<br /></li>}<br />
                   <li><u>Start Time:</u> {liveEvent.start_time}</li>
