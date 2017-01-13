@@ -2,10 +2,10 @@ class YelpApi
 
   def self.client
     @client ||= Yelp::Client.new({
-      consumer_key: 'rCPjCJMrMc2naKiFJG1OuQ',
-      consumer_secret: '1vNPcyEIxqJPrtJwO4Xc5U59HNE',
-      token: 'SJmlEkBKLgtC6WMzsZAeWxQrMwUUIaKr',
-      token_secret: 'mmTFFzz8rlBGGn_dQvsqDHuOfcs'
+      consumer_key: 'tDim-oA5sggT_lV1shpe8g',
+      consumer_secret: 'fxHaI-QTjueMgfrede8x3SFmm5Y',
+      token: 'r9vayQto-j_nGd-3a6oKaIBfxG-q1yCu',
+      token_secret: 'LTyyGzA5HpBI8_cUv6Sb53rhf-w'
       })
   end
 
