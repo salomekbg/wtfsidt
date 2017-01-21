@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 import updateFavorite from '../actions/updateFavorite'
 import deleteFavorite from '../actions/deleteFavorite'
 
+
+// having to do props[0] and props[1] feels like a code smell.  Ideally you would be working with a simpler data structure.
 class FavoriteItem extends Component {
   constructor(props){
     super(props)
