@@ -20,6 +20,7 @@ class Index extends Component {
   }
 
   getLocation(callback) {
+    // I feel like you can abstract this away into an action creator or some other piece of code.
     var promise = new Promise(function(resolve, reject) {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
