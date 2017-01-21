@@ -5,6 +5,7 @@ require 'json'
 class EventApi
 
   def self.callEventApi(zipcode)
+#   abstract these strings into a constant or rails secrets.yml file.
     eventful = Eventful::API.new 'cdQPghV7xKrjGxdk',
                                 :user => 'jake.zappin@gmail.com',
                                 :password => 'Flatiron0916'
